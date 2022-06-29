@@ -32,4 +32,3 @@ if display == (" ".join([letter for letter in word_to_guess])):
   print("Congrats, you found the word.")
 elif life == 0:
   print(f"You lost. The word was {word_to_guess}")
-  
