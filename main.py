@@ -1,4 +1,5 @@
 import random
+import string
 
 words = ["aback","abaft","abandoned","abashed","aberrant","abhorrent","abiding","abject","ablaze","able","abnormal","aboard","aboriginal","abortive","abounding","abrasive","abrupt","absent","absorbed","absorbing","abstracted","absurd","abundant","abusive","accept","acceptable","accessible","accidental","account","accurate","achiever","acid","acidic","acoustic","acoustics","acrid","act","action","activity","actor","actually"]
 
@@ -10,6 +11,9 @@ life = len(word_to_guess)
 
 while display != (" ".join([letter for letter in word_to_guess])) and life != 0:
   new_try = input(f"You have {life} tries. Essayez une autre lettre : ")
+  if not new_try in string.ascii_letters:
+    print("You need to give a letter")
+    continue
   if new_try in tried_letters:
     print("You have already tried that letter.")
     continue
